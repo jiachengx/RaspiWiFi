@@ -111,6 +111,8 @@ def set_ap_client_mode():
     os.system('chmod +x /etc/cron.raspiwifi/apclient_bootstrapper')
     os.system('mv /etc/dnsmasq.conf.original /etc/dnsmasq.conf')
     os.system('mv /etc/dhcpcd.conf.original /etc/dhcpcd.conf')
+    os.system('systemctl disable dnsmasq.service')
+    os.system('systemctl disable hostapd.service')
     os.system('reboot')
 
 def update_wpa(wpa_enabled, wpa_key):
